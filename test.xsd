@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:element name="bedrijven" type="companies"/>
+
+  <xs:simpleType name="nametype">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[&a-zA-Z0-9][a-z \-&;.'0-9]*"/> 
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="postalcode">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{4}[A-Z]{2}"/> 
+    </xs:restriction>
+  </xs:simpleType>
+
+ <xs:complexType name="company">
+    <xs:sequence>
+      <xs:element name="naam" type="nametype"/>
+        <xs:element name="postcode" type="postalcode"/>
+    </xs:sequence>                
+  </xs:complexType> 
+
+  <xs:complexType name="city"> 
+    <xs:sequence>             
+      <xs:element name="bedrijf" type="company" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="naam" type="nametype" use="required"/>
+  </xs:complexType>     
+
+  <xs:complexType name="municipality">
+    <xs:sequence>                
+      <xs:element name="stad" type="city" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="naam" type="nametype" use="required"/>
+  </xs:complexType>    
+
+ 
+ 
+ 
+  <xs:complexType name="region">
+      <xs:sequence>                
+             
+       <xs:element name="gemeente" type="municipality" maxOccurs="unbounded"/>
+  
+                
+      </xs:sequence>
+      <xs:attribute name="naam" type="nametype" use="required"/>
+     </xs:complexType>  
+
+
+
+     <xs:complexType name="companies">
+   <xs:sequence>        
+    <xs:element name="provincie" type="region"  maxOccurs="unbounded"/>   
+   </xs:sequence>
+  </xs:complexType>   
+
+
+</xs:schema>
