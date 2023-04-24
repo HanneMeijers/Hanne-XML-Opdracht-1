@@ -2,19 +2,19 @@
 <bedrijven  
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="test.xsd">
-<provincie naam="Drenthe">
-<gemeente naam="aa en Hunze">
-<stad naam="anloo">
-<bedrijf>
-<naam>v.o.f. Anloo</naam>
-<postcode>9468CG</postcode>
-</bedrijf>
-</stad>
-<stad naam="gasselternijveen">
-<bedrijf>
-<naam>podiumdelen.nl</naam>
-<postcode>9514BV</postcode>
-</bedrijf>
+    <provincie naam="Drenthe">
+        <gemeente naam="aa en Hunze">
+            <stad naam="anloo">
+                <bedrijf>
+                    <naam>v.o.f. Anloo</naam>
+                    <postcode>9468CG</postcode>
+                </bedrijf>
+            </stad>
+            <stad naam="gasselternijveen">
+                <bedrijf>
+                    <naam>podiumdelen.nl</naam>
+                    <postcode>9514BV</postcode>
+                </bedrijf>
 <bedrijf>
 <naam>digi collect incassobureau</naam>
 <postcode>9514bh</postcode>
